@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <title>Index</title>
+    <style>
+        body {margin: 10px;}
+        h1 {color: lightgray; font-size:36px;}
+        p {font-size: 14px;}
+    </style>
+</head>
+<body>
+    <h1>{{title}}</h1>
+    {% if flg %}
+    <p style="background-color:red; font-weight:bold;">警告</p>
+    {% else %}
+    <p style="background-color: lightblue;">Information</p>
+    {% endif %}
+    <p>{{message}}</p>
+    <div>
+        <form method="post" action="/">
+            <input type="checkbox" name="check" id="ck1">
+            <label for="ck1">Checkbox</label>
+        </form>
+    </div>
+    <div>
+        <input type="radio" name="radio" id="r1" value="A">
+        <label for="r1">radio 1</label>
+    </div>
+    <div>
+        <input type="radio" name="radio" id="r2" value="B">
+        <label for="r2">radio 2</label>
+    </div>
+    <div>
+        <select name="sel" multiple>
+            <option >Orange</option>
+            <option >Grape</option>
+            <option >Lemon</option>
+            <option >Pineapple</option>
+        </select>
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+</body>
+</html>
